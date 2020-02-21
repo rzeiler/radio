@@ -1,0 +1,47 @@
+#radio
+    display: flex
+    flex-direction: column
+    height: 100vh
+    overflow: hidden
+#radio #mat-tab-group-wrapper
+    flex: 1 1
+    overflow: hidden
+#radio #mat-tab-group-wrapper .mat-tab-body-wrapper
+    overflow-y: auto !important
+#radio 
+    .col
+        &.icon img
+            margin: 10px
+            width: 50px
+            height: 50px
+        &.text
+            flex: 1
+            @media (max-width: 640px)
+                flex: calc(100% - 80px)
+            .mat-line
+                margin: 0px
+                white-space: unset
+        &.select
+            width: 40px
+         
+    .player
+        border-top: 2px solid #303030
+        box-shadow: 0 0 20px #000
+        transition: all .5s ease-in-out
+        .mat-list-base
+            padding: 10px 0
+            background-position: center center
+            background-repeat: no-repeat
+            background-size: cover
+            .mat-list-item
+                height: auto
+                margin: -10px 0
+                background-color: rgba(0,0,0,.5)
+                .mat-list-item-content
+                    flex-wrap: wrap
+                    justify-content: center
+                    padding: 10px 0
+
+
+audio 
+    display: none
