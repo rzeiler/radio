@@ -14,7 +14,7 @@ export class RadioComponent {
 
   @ViewChild('player', { static: true }) _player: ElementRef;
 
-  _clickedPlay: boolean = false;
+
   _playerOpen: boolean = false;
   _channel: Channel;
   _tab: Tab;
@@ -37,35 +37,37 @@ export class RadioComponent {
   }
 
   hearnow(tab: number, channel: number) {
-    let _channel: Channel = this.data[tab].channels[channel];
+    const _channel: Channel = this.data[tab].channels[channel];
     this.data.map((tab: Tab) => {
       tab.channels.map((channel: Channel) => {
         if (channel.key !== _channel.key)
           channel.checked = false;
       });
     });
-    this.data[tab].channels[channel].checked = !this.data[tab].channels[channel].checked;
+    _channel.checked = !_channel.checked;
     /* set */
-    this._channel = this.data[tab].channels[channel];
+    this._channel = _channel;
     this._tab = this.data[tab];
 
     this.player(_channel);
   }
   player(_channel: Channel) {
-    this._clickedPlay = _channel.checked;
+
     this._playerOpen = _channel.checked;
     this._player.nativeElement.src = _channel.url;
     if (_channel.checked)
       this._player.nativeElement.play();
     if (!_channel.checked)
       this._player.nativeElement.pause();
+
+     
+
   }
 
-  onPlay() {
-    this._clickedPlay = !this._clickedPlay;
-    if (this._clickedPlay)
+  onPlay(arg: Boolean) {
+    if (arg)
       this._player.nativeElement.play();
-    if (!this._clickedPlay)
+    if (!arg)
       this._player.nativeElement.pause();
   }
 

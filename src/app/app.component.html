@@ -3,72 +3,28 @@
     <div class="brand"><i class="material-icons">radio</i> webradio</div>
   </mat-toolbar>
 
-  <mat-tab-group color="warn" id="mat-tab-group-wrapper" #tabGroup>
+  <mat-tab-group color="warn" id="mat-tab-group-wrapper" >
     <mat-tab
       label="{{ category.name }}"
       *ngFor="let category of data; let ti = index"
     >
-      <div>
-        <mat-list>
-          <mat-list-item
-            (click)="hearnow(ti, ci)"
-            *ngFor="let channel of category.channels; let ci = index"
-          >
-            <div class="col icon">
-              <img [src]="category.image" alt="" />
-            </div>
-            <div class="col text">
-              <h3 matLine>{{ channel.name }}</h3>
-              <p matLine class="info">Location: {{ channel.location }}</p>
-              <p matLine class="info">City: {{ channel.city }}</p>
-            </div>
-            <div class="col select">
-              <mat-checkbox [checked]="channel.checked"></mat-checkbox>
-            </div>
-          </mat-list-item>
-        </mat-list>
-      </div>
+      <mat-list>
+        <radio-channel-list-item
+          (click)="hearnow(ti, ci)"
+          *ngFor="let channel of category.channels; let ci = index"
+          [tab]="category"
+          [channel]="channel"
+        ></radio-channel-list-item>
+      </mat-list>
     </mat-tab>
   </mat-tab-group>
 
   <audio #player autoplay controls preload></audio>
 
-  <div class="player" [style.height]="_playerOpen == true ? 'auto' : '0px'">
-    <div
-      class="mat-list-base"
-      *ngIf="_playerOpen"
-      [style.backgroundImage]="'url(' + _tab.image + ')'"
-    >
-      <div class="mat-list-item">
-        <div class="mat-list-item-content">
-          <div class="col icon">
-            <img [src]="_tab.image" alt="" />
-          </div>
-          <div class="col text">{{ _channel.name }}</div>
-          <div class="col isSmall"></div>
-          <div class="col  ">
-            <button mat-icon-button aria-label="Rewind" [disabled]="true">
-              <mat-icon>fast_rewind</mat-icon>
-            </button>
-          </div>
-
-          <div class="col">
-            <button mat-fab color="warn" (click)="onPlay()">
-              <mat-icon class="material-icons" *ngIf="!_clickedPlay">
-                play_arrow
-              </mat-icon>
-              <mat-icon class="material-icons" *ngIf="_clickedPlay">
-                stop
-              </mat-icon>
-            </button>
-          </div>
-          <div class="col">
-            <button mat-icon-button aria-label="Next" [disabled]="false">
-              <mat-icon>fast_forward</mat-icon>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <app-player
+    [style.height]="_playerOpen == true ? 'auto' : '0px'"
+    [tab]="_tab"
+    (play)="onPlay(true)"
+    (stop)="onPlay(false)"
+  ></app-player>
 </div>

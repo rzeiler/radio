@@ -1,0 +1,90 @@
+{
+  "configVersion": 1,
+  "timestamp": 1583149427057,
+  "index": "'radio'/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "'radio'/favicon.ico",
+        "'radio'/index.html",
+        "'radio'/main-es2015.fe54f014f18a55a49053.js",
+        "'radio'/main-es5.fe54f014f18a55a49053.js",
+        "'radio'/manifest.webmanifest",
+        "'radio'/polyfills-es2015.ca64e4516afbb1b890d5.js",
+        "'radio'/polyfills-es5.277e2e1d6fb2daf91a5c.js",
+        "'radio'/runtime-es2015.0811dcefd377500b5b1a.js",
+        "'radio'/runtime-es5.0811dcefd377500b5b1a.js",
+        "'radio'/styles.66c7d1da2f6cc01d7856.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "'radio'/assets/channels.json",
+        "'radio'/assets/icons/icon-128x128.png",
+        "'radio'/assets/icons/icon-144x144.png",
+        "'radio'/assets/icons/icon-152x152.png",
+        "'radio'/assets/icons/icon-192x192.png",
+        "'radio'/assets/icons/icon-384x384.png",
+        "'radio'/assets/icons/icon-512x512.png",
+        "'radio'/assets/icons/icon-72x72.png",
+        "'radio'/assets/icons/icon-96x96.png",
+        "'radio'/assets/images/dnb.png",
+        "'radio'/assets/images/freedom.jpg",
+        "'radio'/assets/images/record.jpg",
+        "'radio'/assets/images/violin.jpg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "'radio'/assets/channels.json": "acb51b2ca508cf19b1aab37a340ae1ecb0bba76c",
+    "'radio'/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "'radio'/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "'radio'/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "'radio'/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "'radio'/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "'radio'/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "'radio'/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "'radio'/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "'radio'/assets/images/dnb.png": "51eb683b62d0b76f4e41938a90d4532d6ca4349d",
+    "'radio'/assets/images/freedom.jpg": "c026a3e4add5c795795be35807de07c082a8c4d4",
+    "'radio'/assets/images/record.jpg": "fec6f4883328c2583e9aeb890f96ef85dc83cd32",
+    "'radio'/assets/images/violin.jpg": "b735f7f5c1f4ff08ce3743e5c0425cf68220ef46",
+    "'radio'/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "'radio'/index.html": "dafb5e6daddd8d1608328402493c7f0ae3877a22",
+    "'radio'/main-es2015.fe54f014f18a55a49053.js": "a596d648ee8385b0aaf4ab78159dbcce26388913",
+    "'radio'/main-es5.fe54f014f18a55a49053.js": "f990a376dd77918571a9cd6707b464928fd0a2b5",
+    "'radio'/manifest.webmanifest": "d4b4fff3debb34c9ae61b37e49eb5c7fc6a6ff44",
+    "'radio'/polyfills-es2015.ca64e4516afbb1b890d5.js": "8779ed8d9bf0580e1b50b352a9b8fd520be24433",
+    "'radio'/polyfills-es5.277e2e1d6fb2daf91a5c.js": "8d03638471d7374e81cf33adfdea439f84ac3873",
+    "'radio'/runtime-es2015.0811dcefd377500b5b1a.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "'radio'/runtime-es5.0811dcefd377500b5b1a.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "'radio'/styles.66c7d1da2f6cc01d7856.css": "ab23407b764ecbf940291176cf22d78fb74e706e"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}

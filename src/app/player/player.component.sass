@@ -1,92 +1,19 @@
-audio 
-    display: none
 
-::ng-deep
-    position: absolute
-
-::ng-deep .player .overlayer .flex
-    width: 80%
-    max-width: 300px
-    margin: 20px auto
-    display: flex
-    flex-direction: row
-    justify-content: space-between
-    align-self: stretch
-    align-items: center
- 
-::ng-deep
-    .overlayer 
-        height: 100vh
-        width: 100vw
-        background-color: rgba(3,3,3,.5)
-        display: flex
-        flex-direction: column
-        text-align: center
-        .mat-toolbar
-            background-color: transparent !important
-        .mat-slider-horizontal, h1, h2
-            display: block !important
-            width: 80%
-            margin: 20px auto
-            max-width: 300px
-        h1, h2
-            text-shadow: 1px 1px 10px #000
- 
-::ng-deep .player
-    background-position: center center
-    background-repeat: no-repeat
-    background-size: cover
-::ng-deep .spacer
-    flex: 1 1 auto
-::ng-deep .controlls
-    background-color: rgba(3,3,3,.5)
-    box-shadow: 1px 1px 200px #000
-
-$animation-name: 'pump-it-up'
-@mixin keyframes($animationName)    
-    @keyframes #{$animationName} 
-        @content
-
-$max-scale: 5
-$max-itmes: 49
-
-@for $i from 0 through $max-itmes
-    @include keyframes(#{$animation-name+$i}) 
-        20% 
-            transform: scaleY(random($max-scale))
-        40% 
-            transform: scaleY(random($max-scale))
-            
-        60% 
-            transform: scaleY(random($max-scale))
-            
-        80% 
-            transform: scaleY(random($max-scale))
-            
-        100% 
-            transform: scaleY(random($max-scale))
-
-::ng-deep  
-    .levels
-        display: flex
-        flex-direction: row
-        width: 100%
-        height: 100%
-        .level
-            align-self: center
-            content: ' '
-            height: 2px
-            margin: 2px
-            flex-grow: 1
-            background: rgba(255,255,255,.65)
-            transition: height 1s ease  
-          
-        &.animated
-            @for $i from 0 through $max-itmes
-                .level#{$i}
-                    height: 30px
-                    animation: #{$animation-name+$i} 400 + random(800) + ms linear infinite alternate
-                    
-                
-            
-        
+.player
+    border-top: 2px solid #303030
+    box-shadow: 0 0 20px #000
+    transition: all .5s ease-in-out
+    .mat-list-base
+        padding: 10px 0
+        background-position: center center
+        background-repeat: no-repeat
+        background-size: cover
+        .mat-list-item
+            height: auto
+            margin: -10px 0
+            background-color: rgba(0,0,0,.5)
+            .mat-list-item-content
+                flex-wrap: wrap
+                justify-content: center
+                padding: 10px 0
+                 

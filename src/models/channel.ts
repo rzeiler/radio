@@ -5,4 +5,5 @@ export class Channel {
   location: string;
   city: string;
   checked: boolean;
+  image: string;
 }

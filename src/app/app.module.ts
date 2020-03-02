@@ -17,11 +17,13 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { ChannelListItemComponent } from './channel-list-item/channel-list-item.component';
 
 @NgModule({
   declarations: [
     RadioComponent,
-    PlayerComponent
+    PlayerComponent,
+    ChannelListItemComponent
   ],
   imports: [
     BrowserModule,

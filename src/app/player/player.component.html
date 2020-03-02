@@ -1,63 +1,46 @@
-<div class="player" [style.backgroundImage]="'url(' + _currentTab.image + ')'">
-  <audio #player autoplay controls preload></audio>
-  <div class="overlayer">
-    <mat-toolbar>
-      <button mat-icon-button  >
-        <mat-icon class="material-icons">chevron_left</mat-icon>
-      </button>
-    </mat-toolbar>
-
-    <h1>{{ _currentChannel.name }}</h1>
-    <h2>{{ _currentChannel.location }}</h2>
-    <div class="spacer">
-      <div class="levels" [class]="{'animated': _clickedPlay }">
-        <div
-          *ngFor="let _number of _numbers; let i = index"
-          [class]="['level', ['level' + i]]"
-        ></div>
-      </div>
-    </div>
-    <div class="controlls">
-      <mat-slider
-        color="warn"
-        min="0"
-        max="1"
-        step="0.1"
-        (change)="onChange($event)"
-        [value]="_volume"
-        thumbLabel
-      ></mat-slider>
-      <div class="flex">
-        <div>
-          <button
-            mat-icon-button
-            aria-label="Rewind"
-            
-            [disabled]="_prevChannel == -1"
-          >
+<div class="player">
+  <div class="mat-list-base" *ngIf="tab" [style.backgroundImage]="'url(' + tab.image + ')'">
+    <div class="mat-list-item">
+      <div class="mat-list-item-content">
+        <div class="col icon">
+          <img [src]="tab.image" alt="" />
+        </div>
+        <div class="col text">{{ tab.name }}</div>
+        <div class="col isSmall"></div>
+        <!-- <div class="col  ">
+          <button mat-icon-button aria-label="Rewind" [disabled]="true">
             <mat-icon>fast_rewind</mat-icon>
           </button>
+        </div> -->
+        <div class="col">
+          &nbsp; &nbsp; &nbsp;
         </div>
-        <div>
-          <button mat-fab color="warn" (click)="setPlay()">
-            <mat-icon class="material-icons" *ngIf="!_clickedPlay">
+        <div class="col">
+          <button mat-fab color="warn">
+            <mat-icon
+              class="material-icons"
+              (click)="onPlay()"
+              *ngIf="!clickedPlay"
+            >
               play_arrow
             </mat-icon>
-            <mat-icon class="material-icons" *ngIf="_clickedPlay">
+            <mat-icon
+              class="material-icons"
+              (click)="onStop()"
+              *ngIf="clickedPlay"
+            >
               stop
             </mat-icon>
           </button>
         </div>
-        <div>
-          <button
-            mat-icon-button
-            aria-label="Next"
-           
-            [disabled]="_nextChannel == -1"
-          >
+        <div class="col">
+          &nbsp; &nbsp; &nbsp;
+        </div>
+        <!-- <div class="col">
+          <button mat-icon-button aria-label="Next" [disabled]="false">
             <mat-icon>fast_forward</mat-icon>
           </button>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
