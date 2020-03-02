@@ -16,8 +16,8 @@ export class RadioComponent {
 
 
   _playerOpen: boolean = false;
-  _channel: Channel;
-  _tab: Tab;
+  _channel: Channel = null;
+  _tab: Tab = null;
 
   constructor() { }
 
@@ -29,11 +29,11 @@ export class RadioComponent {
     });
     this.data = data.categories as Tab[];
     /* debug */
-    const _channel: Channel = this.data[0].channels[0];
-    _channel.checked = true;
-    this._channel = _channel;
-    this._tab = this.data[0];
-    this.player(_channel);
+    // const _channel: Channel = this.data[0].channels[0];
+    // _channel.checked = true;
+    // this._channel = _channel;
+    // this._tab = this.data[0];
+    // this.player(_channel);
   }
 
   hearnow(tab: number, channel: number) {
@@ -49,19 +49,17 @@ export class RadioComponent {
     this._channel = _channel;
     this._tab = this.data[tab];
 
+
     this.player(_channel);
   }
   player(_channel: Channel) {
-
     this._playerOpen = _channel.checked;
-    this._player.nativeElement.src = _channel.url;
     if (_channel.checked)
-      this._player.nativeElement.play();
-    if (!_channel.checked)
-      this._player.nativeElement.pause();
-
-     
-
+      this._player.nativeElement.src = _channel.url;
+    if (!_channel.checked) {
+      this._player.nativeElement.src = "";
+      this._channel = null;
+    }
   }
 
   onPlay(arg: Boolean) {

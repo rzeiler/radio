@@ -1,11 +1,11 @@
 <div class="player">
-  <div class="mat-list-base" *ngIf="tab" [style.backgroundImage]="'url(' + tab.image + ')'">
+  <div class="mat-list-base" *ngIf="channel" [style.backgroundImage]="'url(' + tab.image + ')'">
     <div class="mat-list-item">
       <div class="mat-list-item-content">
         <div class="col icon">
-          <img [src]="tab.image" alt="" />
+          <img [src]="channel.image" alt="" />
         </div>
-        <div class="col text">{{ tab.name }}</div>
+        <div class="col text">{{ channel.name }}</div>
         <div class="col isSmall"></div>
         <!-- <div class="col  ">
           <button mat-icon-button aria-label="Rewind" [disabled]="true">

@@ -19,11 +19,12 @@
     </mat-tab>
   </mat-tab-group>
 
-  <audio #player autoplay controls preload></audio>
+  <audio #player autoplay controls preload ></audio>
 
-  <app-player
+  <app-player class="player-container"
     [style.height]="_playerOpen == true ? 'auto' : '0px'"
     [tab]="_tab"
+    [channel]="_channel"
     (play)="onPlay(true)"
     (stop)="onPlay(false)"
   ></app-player>
