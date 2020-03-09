@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 
 import { RadioComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -36,7 +36,8 @@ import { ChannelListItemComponent } from './channel-list-item/channel-list-item.
     MatSliderModule,
     MatTooltipModule,
     MatIconModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [RadioComponent]

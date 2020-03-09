@@ -1,7 +1,12 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import * as data from 'src/assets/channels.json';
+import { HttpClient } from '@angular/common/http';
+
+import * as Config from 'src/assets/channels.json';
 import { Tab } from 'src/models/tab.js';
 import { Channel } from 'src/models/channel';
+import { ChannelDetail } from 'src/models/channeldetail';
+import { Observable, BehaviorSubject, Subject } from 'rxjs';
+
 
 @Component({
   selector: 'radio',
@@ -14,20 +19,38 @@ export class RadioComponent {
 
   @ViewChild('player', { static: true }) _player: ElementRef;
 
+  configUrl: string = 'https://api.laut.fm/genres/';
 
   _playerOpen: boolean = false;
   _channel: Channel = null;
   _tab: Tab = null;
 
-  constructor() { }
+  _channelDetails: Observable<ChannelDetail[]>;
+  _channelDetail: ChannelDetail;
+
+  
+
+  genres = ['Bass','Rock','Dance%20&%20Electronic'];
+ 
+  bsGenres: Subject<Tab[]> = new BehaviorSubject<Tab[]>([]);
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    data.categories.map((tab: Tab) => {
-      tab.channels.map((channel: Channel) => {
-        channel.checked = false;
-      });
+
+
+    this.genres.map(genre =>{
+
     });
-    this.data = data.categories as Tab[];
+
+
+
+    // Config.categories.map((tab: Tab) => {
+    //   tab.channels.map((channel: Channel) => {
+    //     channel.checked = false;
+    //   });
+    // });
+    // this.data = Config.categories as Tab[];
     /* debug */
     // const _channel: Channel = this.data[0].channels[0];
     // _channel.checked = true;
@@ -36,8 +59,15 @@ export class RadioComponent {
     // this.player(_channel);
   }
 
+  getConfig(url: string): Observable<ChannelDetail[]> {
+    return this.http.get<ChannelDetail[]>(url);
+  }
+
   hearnow(tab: number, channel: number) {
     const _channel: Channel = this.data[tab].channels[channel];
+
+
+
     this.data.map((tab: Tab) => {
       tab.channels.map((channel: Channel) => {
         if (channel.key !== _channel.key)
@@ -53,13 +83,29 @@ export class RadioComponent {
     this.player(_channel);
   }
   player(_channel: Channel) {
-    this._playerOpen = _channel.checked;
-    if (_channel.checked)
-      this._player.nativeElement.src = _channel.url;
-    if (!_channel.checked) {
-      this._player.nativeElement.src = "";
-      this._channel = null;
-    }
+
+    const channelConfig = `${Config.stations_url}${_channel.url}`;
+
+
+    this._channelDetails = this.getConfig(channelConfig);
+
+    this._channelDetails.subscribe((data: ChannelDetail[]) => {
+      this._channelDetail = data[0];
+
+      this._playerOpen = _channel.checked;
+      if (_channel.checked)
+        this._player.nativeElement.src =   this._channelDetail.stream_url;
+      if (!_channel.checked) {
+        this._player.nativeElement.src = "";
+        this._channel = null;
+      }
+
+
+    });
+
+
+
+
   }
 
   onPlay(arg: Boolean) {

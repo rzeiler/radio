@@ -1,12 +1,31 @@
 <div class="player">
-  <div class="mat-list-base" *ngIf="channel" [style.backgroundImage]="'url(' + tab.image + ')'">
+  <div
+    class="mat-list-base"
+    *ngIf="channeldetail"
+    [style.backgroundImage]="
+      'url(' + channeldetail.images.background_1024x768 + ')'
+    "
+  >
     <div class="mat-list-item">
       <div class="mat-list-item-content">
         <div class="col icon">
-          <img [src]="channel.image" alt="" />
+          <img [src]="channeldetail.images.station_80x80" alt="" />
         </div>
-        <div class="col text">{{ channel.name }}</div>
-        <div class="col isSmall"></div>
+        <div class="col text">
+          {{ channeldetail.display_name }}<br />
+
+          <small *ngIf="_current_song | async"
+            >Title: {{ (_current_song | async)?.title }}<br />
+
+            <ng-template *ngIf="(_current_song | async)?.album">
+              Album:
+              {{ (_current_song | async)?.album }}<br />
+            </ng-template>
+
+            Artist:
+            {{ (_current_song | async)?.artist.name }}</small
+          >
+        </div>
         <!-- <div class="col  ">
           <button mat-icon-button aria-label="Rewind" [disabled]="true">
             <mat-icon>fast_rewind</mat-icon>

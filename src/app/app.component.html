@@ -21,10 +21,9 @@
 
   <audio #player autoplay controls preload ></audio>
 
-  <app-player class="player-container"
+  <app-player *ngIf="_channelDetails" class="player-container" 
     [style.height]="_playerOpen == true ? 'auto' : '0px'"
-    [tab]="_tab"
-    [channel]="_channel"
+    [channeldetail]="_channelDetail"
     (play)="onPlay(true)"
     (stop)="onPlay(false)"
   ></app-player>

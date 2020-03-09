@@ -1,4 +1,5 @@
 {
+    "stations_url":"https://api.laut.fm/stations/",
     "categories": [
         {
             "name": "Dubstep / DRUM AND BASS",
@@ -6,195 +7,31 @@
             "channels": [
                 {
                     "key": 1,
-                    "name": "PARTY VIBE RADIO Dubstep",
-                    "url": "http://www.partyviberadio.com:8040/;listen.pls?sid=1",
-                    "location": "Germany",
-                    "city": "Europe/Berlin",
-                    "image":"assets/images/dnb.png"
+                    "name": "DNBZONE",
+                    "url": "dnbzone"
                 },
                 {
                     "key": 2,
-                    "name": "PARTY VIBE RADIO DRUM AND BASS",
-                    "url": "http://www.partyviberadio.com:8004/;listen.pls?sid=1",
-                    "location": "Germany",
-                    "city": "Europe/Berlin",
-                    "image":"assets/images/dnb.png"
-                },
-                {
-                    "key": 3,
-                    "name": "JR.FM Dubstep Radio",
-                    "url": "http://149.56.157.81:8431/;",
-                    "location": "Canada",
-                    "city": "Montreal",
-                    "image":"assets/images/dnb.png"
-                },
-                {
-                    "key": 4,
-                    "name": "Radio Studio Souto",
-                    "url": "http://192.99.150.31:9083/;stream/1",
-                    "location": "Canada",
-                    "city": "Montreal",
-                    "image":"assets/images/dnb.png"
-                }
+                    "name": "BASS FM",
+                    "url": "bassfm"
+                } 
             ]
         },
         {
             "name": "Electro",
             "image":"assets/images/record.jpg",
             "channels": [
-                {
-                    "key": 5,
-                    "name": "Chicago Discovertrance",
-                    "url": "http://chicago.discovertrance.com:9216/;",
-                    "location": "United Kingdom",
-                    "city": "Europe/London"
-                },
-                {
-                    "key": 6,
-                    "name": "Detroits Electronic Music Station",
-                    "url": "http://icecast.ofdoom.com:8000/burst.mp3",
-                    "location": "United States",
-                    "city": "America/Chicago"
-                },
-                {
-                    "key": 7,
-                    "name": "PARTY VIBE RADIO TECHNO",
-                    "url": "http://www.partyviberadio.com:8046/;listen.pls?sid=1",
-                    "location": "Germany",
-                    "city": "Europe/Berlin"
-                },
-                {
-                    "key": 8,
-                    "name": "PulseEDM Dance Music Radio",
-                    "url": "http://pulseedm.cdnstream1.com:8124/1373_128",
-                    "location": "United States",
-                    "city": "America/Chicago"
-                },
-                {
-                    "key": 9,
-                    "name": "Sunshine Live 2000er",
-                    "url": "https://stream.sunshine-live.de/2000er/mp3-192/stream.sunshine-live.de/",
-                    "location": "Germany",
-                    "city": "Europe/Berlin"
-                },
-                {
-                    "key": 10,
-                    "name": "Amsterdam Dance Event - Club",
-                    "url": "https://stream.sunshine-live.de/ade18club/mp3-192/stream.sunshine-live.de/",
-                    "location": "Germany",
-                    "city": "Europe/Berlin"
-                },
-                {
-                    "key": 11,
-                    "name": "Electro Radio",
-                    "url": "http://stream.electroradio.fm/stream",
-                    "location": "Germany",
-                    "city": "Aulendorf"
-                },
-                {
-                    "key": 12,
-                    "name": "TECHNO4EVER.FM",
-                    "url": "http://relay01.t4e.dj/main_low.mp3",
-                    "location": "Germany",
-                    "city": "Europe/Berlin"
-                },
-                {
-                    "key": 13,
-                    "name": "DASDING",
-                    "url": "http://swr-dasding-live.cast.addradio.de/swr/dasding/live/mp3/128/stream.mp3",
-                    "location": "Germany",
-                    "city": "Europe/Berlin"
-                },
-                {
-                    "key": 14,
-                    "name": "dubbase.fm",
-                    "url": "http://stream.dubbase.fm:7004/;stream.mp3",
-                    "location": "Germany",
-                    "city": "Europe/Berlin"
-                },
-                {
-                    "key": 15,
-                    "name": "CLUBMIX",
-                    "url": "http://tuner.m1.fm/clubmix.mp3",
-                    "location": "Germany",
-                    "city": "Europe/Berlin"
-                },
-                {
-                    "key": 16,
-                    "name": "SomaFM - Groove Salad",
-                    "url": "http://ice1.somafm.com/groovesalad-128-mp3",
-                    "location": "United States",
-                    "city": "Sausalito"
-                },
-                {
-                    "key": 17,
-                    "name": "SomaFM - Space Station",
-                    "url": "http://ice1.somafm.com/spacestation-128-mp3",
-                    "location": "United States",
-                    "city": "Sausalito"
-                }
+                
             ]
         },
         {
             "name": "Charts",
             "image":"assets/images/freedom.jpg",
             "channels": [
-                {
-                    "key": 18,
-                    "name": "TOP OF THE CHARTS",
-                    "url": "http://tuner.m1.fm/charts.mp3",
-                    "location": "Germany",
-                    "city": "Europe/Berlin",
-                    "image":"assets/images/freedom.jpg"
-                },
-                {
-                    "key": 19,
-                    "name": "HIT RADIO FFH",
-                    "url": "http://mp3.ffh.de/radioffh/hqlivestream.mp3",
-                    "location": "Germany",
-                    "city": "Europe/Berlin",
-                    "image":"assets/images/freedom.jpg"
-                },
-                {
-                    "key": 20,
-                    "name": "planet radio",
-                    "url": "http://mp3.planetradio.de/planetradio/hqlivestream.mp3",
-                    "location": "Germany",
-                    "city": "Europe/Berlin",
-                    "image":"assets/images/freedom.jpg"
-                },
-                {
-                    "key": 21,
-                    "name": "I LOVE THE SUN - Latin & Sommerhits",
-                    "url": "http://stream01.iloveradio.de/iloveradio15.mp3",
-                    "location": "Germany",
-                    "city": "Europe/Berlin",
-                    "image":"assets/images/freedom.jpg"
-                }
-            ]
-        },
-        {
-            "name": "Classical Music",
-            "image":"assets/images/violin.jpg",
-            "channels": [
-                {
-                    "key": 22,
-                    "name": "Whisperings Solo Piano Radio",
-                    "url": "http://pianosolo.streamguys.net/live",
-                    "location": "United States",
-                    "city": "Chicago",
-                    "image":"assets/images/violin.jpg"
-                },
-                {
-                    "key": 23,
-                    "name": "Venice Classic Radio",
-                    "url": "http://109.123.116.202:8020/stream/1/",
-                    "location": "United Kingdom",
-                    "city": "Europe/London",
-                    "image":"assets/images/violin.jpg"
-                }
+                
             ]
         }
+       
     ],
     "timestemp": "Build 5122019"
 }
